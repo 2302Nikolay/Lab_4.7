@@ -1,5 +1,9 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 import tkinter as tk
 from tkinter import filedialog
+
 
 class FileEditorApp:
     def __init__(self, root):
@@ -21,7 +25,7 @@ class FileEditorApp:
     def open_file(self):
         file_path = self.file_path_entry.get()
         try:
-            with open(file_path, 'r') as file:
+            with open(file_path, "r") as file:
                 content = file.read()
                 self.text_content.delete(1.0, tk.END)  # Очищаем текущее содержимое
                 self.text_content.insert(tk.END, content)
@@ -32,11 +36,12 @@ class FileEditorApp:
         file_path = self.file_path_entry.get()
         content = self.text_content.get(1.0, tk.END)
         try:
-            with open(file_path, 'w') as file:
+            with open(file_path, "w") as file:
                 file.write(content)
             tk.messagebox.showinfo("Сохранено", "Файл успешно сохранен")
         except Exception as e:
             tk.messagebox.showerror("Ошибка", f"Не удалось сохранить файл: {str(e)}")
+
 
 if __name__ == "__main__":
     root = tk.Tk()

@@ -3,6 +3,7 @@
 import tkinter as tk
 from tkinter import messagebox
 
+
 def sum():
     try:
         num1 = float(entry_num1.get())
@@ -24,6 +25,7 @@ def sub():
         result_label.config(text=f"Результат: {result}")
     except:
         result_label.config(text="Ошибка: Введите числа")
+
 
 def div():
     try:
@@ -53,6 +55,7 @@ def mult():
         result_label.config(text="Ошибка: Введите числа")
     except ZeroDivisionError:
         result_label.config(text="Ошибка: Деление на ноль")
+
 
 # Создание главного окна
 root = tk.Tk()
